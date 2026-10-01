@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0b3f74">
+<title>回声电台 ECHO FM · 非官方档案馆</title>
+<meta name="description" content="回声电台（ECHO FM）1996—2003 年节目资料非官方档案馆。">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230b3f74'/><g stroke='%23eaf2ff' stroke-width='6' stroke-linecap='round'><path d='M18 32h0'/><path d='M26 22v20'/><path d='M38 15v34'/><path d='M50 26v12'/></g></svg>">
+<!--
+  ════════════════════════════════════════════════════════════
+   回声电台 · 非官方档案馆      建站：2009-06-06
+   ════════════════════════════════════════════════════════════
+   待办事项：
+     · 节目单 1998 年部分补全
+     · 主持人照片翻拍（原片已上交）
+     · 留言板第 41 页的附件还没处理
+     · 母带 47 段，第 47 段打不开
+   最后更新：2009-11-03 03:17
+  ════════════════════════════════════════════════════════════
+
+  周砚注：我把静默的那一段剪掉了。不要传出去。
+-->
+<style>
+/* ===================== 两套皮肤 ===================== */
+:root{
+  --bg:#e7e1d2; --panel:#fcfaf3; --panel2:#ece6d7; --ink:#26241f; --dim:#6f6a5b;
+  --brand:#125a9e; --brand2:#0b3f74; --accent:#a32020; --line:#b3aa95; --ok:#1d7a3c;
+  --font:"SimSun","Songti SC","STSong",serif; --mono:Consolas,"Courier New",monospace;
+  --glow:none; --paper:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .045 0'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>");
+}
+body[data-mode="night"]{
+  --bg:#04070a; --panel:#070c11; --panel2:#0c141b; --ink:#7ce6a6; --dim:#3a7a58;
+  --brand:#5ce08a; --brand2:#0f2d1e; --accent:#ff2f3f; --line:#17392a; --ok:#5ce08a;
+  --font:Consolas,"Courier New","Microsoft YaHei",monospace; --mono:Consolas,"Courier New",monospace;
+  --glow:0 0 6px rgba(92,224,138,.45); --paper:none;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;background:var(--bg);background-image:var(--paper);
+  color:var(--ink);font-family:var(--font);font-size:13.5px;line-height:1.95;
+  transition:background-color .9s ease,color .9s ease;
+  overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+}
+body[data-mode="night"]{font-size:13.5px;line-height:2.05}
+::selection{background:#0b3f74;color:#fff}
+body[data-mode="night"] ::selection{background:#5ce08a;color:#04070a}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--panel2)}
+::-webkit-scrollbar-thumb{background:var(--line)}
+::-webkit-scrollbar-thumb:hover{background:var(--brand)}
+
+/* ===================== 覆盖层 ===================== */
+#noise,#scan,#vig,#flash,#crack,#crackSvg{position:fixed;inset:0;pointer-events:none}
+#noise{background-repeat:repeat;opacity:.55;z-index:60;mix-blend-mode:multiply;animation:noiseShift .14s steps(1) infinite}
+body[data-mode="night"] #noise{opacity:.9;mix-blend-mode:screen;animation-duration:.09s}
+@keyframes noiseShift{0%{background-position:0 0}25%{background-position:-37px 19px}50%{background-position:23px -41px}75%{background-position:-11px -7px}100%{background-position:31px 29px}}
+#scan{z-index:61;opacity:0;background:repeating-linear-gradient(180deg,rgba(92,224,138,.09) 0 1px,transparent 1px 3px);transition:opacity .9s}
+body[data-mode="night"] #scan{opacity:1;animation:scanRoll 7s linear infinite}
+@keyframes scanRoll{from{background-position-y:0}to{background-position-y:120px}}
+#vig{z-index:62;opacity:0;transition:opacity 1.2s;background:radial-gradient(ellipse 90% 80% at 50% 45%,transparent 35%,rgba(0,0,0,.82) 100%)}
+body[data-mode="night"] #vig{opacity:1}
+#flash{z-index:80;opacity:0;background:#fff}
+#flash.go{animation:flashHit .5s ease-out}
+@keyframes flashHit{0%{opacity:0}6%{opacity:.92}100%{opacity:0}}
+#crack{z-index:79;opacity:0;background:#000}
+#crackSvg{z-index:81;opacity:0}
+#crackSvg path{stroke:#eaf6ff;stroke-width:.35;fill:none;stroke-linecap:round;filter:drop-shadow(0 0 3px #9fd8ff)}
+
+/* ===================== 外壳 ===================== */
+#shell{max-width:1010px;margin:0 auto;position:relative;z-index:2;padding-bottom:30px}
+body[data-mode="night"] #shell{max-width:900px}
+
+/* 顶栏 */
+#topbar{
+  background:linear-gradient(#1e6fbd,#0b3f74);color:#eaf2ff;
+  border-bottom:3px solid #062b52;padding:14px 16px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  box-shadow:0 2px 6px rgba(0,0,0,.35);
+}
+body[data-mode="night"] #topbar{background:linear-gradient(#08131b,#04090d);border-bottom:1px solid var(--line);box-shadow:0 0 24px rgba(92,224,138,.12)}
+.logo-mark{flex:0 0 auto;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.logo-text{line-height:1.3}
+.logo-text b{font-size:23px;letter-spacing:3px;display:block;text-shadow:1px 1px 0 rgba(0,0,0,.45)}
+.logo-text span{font-size:11px;letter-spacing:2px;opacity:.82}
+.stn{margin-left:auto;text-align:right;font-size:11.5px;letter-spacing:1px;opacity:.92;line-height:1.9;white-space:nowrap}
+.stn .freq{font-family:var(--mono);font-size:19px;color:#ffe07a;text-shadow:0 0 8px rgba(255,224,122,.6);letter-spacing:2px}
+body[data-mode="night"] .stn .freq{color:#8affc0;text-shadow:0 0 10px rgba(92,224,138,.8)}
+.live{display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff4d4d;margin-right:5px;animation:blink 1.4s steps(1) infinite;vertical-align:middle}
+@keyframes blink{50%{opacity:0}}
+
+/* 导航 */
+#navbar{background:#d9d2bf;border-bottom:1px solid var(--line);padding:0 12px;display:flex;flex-wrap:wrap}
+body[data-mode="night"] #navbar{background:#060b10;border-bottom:1px solid var(--line)}
+#navbar a{
+  display:block;padding:8px 15px;font-size:13px;color:#20304a;text-decoration:none;
+  border-right:1px solid var(--line);letter-spacing:1px;transition:none;
+}
+body[data-mode="night"] #navbar a{color:var(--dim);font-family:var(--mono)}
+#navbar a:hover{background:#c6bda6;color:#8a1a1a}
+body[data-mode="night"] #navbar a:hover{background:#0d1a13;color:var(--ink)}
+#navbar a.on{background:linear-gradient(#1e6fbd,#0b3f74);color:#fff;font-weight:bold}
+body[data-mode="night"] #navbar a.on{background:#0f2d1e;color:#8affc0;text-shadow:var(--glow)}
+#navbar a.lock{color:#a49c88;opacity:.6}
+body[data-mode="night"] #navbar a.lock{color:#22412f}
+
+/* 跑马灯 */
+#marquee{overflow:hidden;white-space:nowrap;background:#fffbe8;border-bottom:1px solid var(--line);padding:5px 0;font-size:12px;color:#7a4a00}
+body[data-mode="night"] #marquee{background:#050a0e;color:var(--dim);border-bottom-color:var(--line)}
+#mqText{display:inline-block;padding-left:100%;animation:mq 34s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* 主区 */
+#wrap{display:grid;grid-template-columns:1fr 252px;gap:15px;padding:15px 12px 0}
+body[data-mode="night"] #wrap{grid-template-columns:1fr 212px}
+#wrap.wide{grid-template-columns:1fr}
+body[data-mode="night"] #wrap.wide{grid-template-columns:1fr}
+/* 接近信号时的异常反馈 */
+body.anomaly #noise{opacity:.82;animation-duration:.08s}
+body.anomaly .logo-text b{animation:twitch .35s steps(1) infinite}
+body.anomaly .stn .freq{animation:twitch .5s steps(1) infinite}
+@keyframes twitch{0%{transform:translate(0)}33%{transform:translate(-1px,1px)}66%{transform:translate(1px,-1px)}100%{transform:translate(0)}}
+.card{background:var(--panel);border:1px solid var(--line);margin-bottom:15px;box-shadow:1px 1px 0 rgba(0,0,0,.10)}
+body[data-mode="night"] .card{box-shadow:0 0 22px rgba(92,224,138,.07)}
+.card-h{
+  background:linear-gradient(#1e6fbd,#0b3f74);color:#fff;font-size:13.5px;font-weight:bold;
+  padding:6px 12px;letter-spacing:2px;
+}
+body[data-mode="night"] .card-h{background:transparent;border-bottom:1px solid var(--line);color:var(--ink);text-shadow:var(--glow)}
+.card-h:before{content:"◆ ";color:#8fc4f0;font-size:11px}
+body[data-mode="night"] .card-h:before{content:"> ";color:var(--accent)}
+.card-b{padding:15px 16px}
+h2.sec{font-size:15px;color:var(--brand2);border-left:4px solid var(--brand);padding-left:9px;margin:20px 0 10px;letter-spacing:1px}
+body[data-mode="night"] h2.sec{color:var(--ink);border-left-color:var(--accent);text-shadow:var(--glow)}
+h2.sec:first-child{margin-top:0}
+p{margin:9px 0}
+.dim{color:var(--dim)}
+.small{font-size:12px}
+a{color:var(--brand);text-decoration:underline}
+a:hover{color:var(--accent)}
+body[data-mode="night"] a{color:#8affc0;text-decoration:none;border-bottom:1px dotted var(--line)}
+body[data-mode="night"] a:hover{color:#fff;background:#0f2d1e}
+.note{background:#fffbe8;border:1px solid #e0d49a;border-left:4px solid #d4a017;padding:9px 12px;margin:12px 0;font-size:12.5px;color:#6b4c00}
+body[data-mode="night"] .note{background:#0a0f0c;border-color:var(--line);border-left-color:var(--accent);color:var(--ink)}
+.warn{color:var(--accent)}
+
+/* 表格 */
+table.tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+table.tbl th{background:linear-gradient(#1e6fbd,#0b3f74);color:#fff;padding:5px 9px;border:1px solid #0b3f74;text-align:left;font-weight:normal;letter-spacing:1px;white-space:nowrap}
+table.tbl td{border:1px solid var(--line);padding:5px 9px;background:var(--panel)}
+table.tbl tr:nth-child(even) td{background:var(--panel2)}
+table.tbl tr:hover td{background:#fff6d8}
+body[data-mode="night"] table.tbl th{background:#0f2d1e;color:#8affc0;border-color:var(--line)}
+body[data-mode="night"] table.tbl tr:nth-child(even) td{background:#080e13}
+body[data-mode="night"] table.tbl tr:hover td{background:#0e1c15;color:#fff}
+.bad{color:var(--accent);font-weight:bold}
+.gone{color:#a49c88}
+
+/* 侧栏 */
+.box{margin-bottom:14px}
+.counter{font-family:var(--mono);font-size:19px;letter-spacing:3px;background:#111;color:#ff5a5a;padding:3px 9px;display:inline-block;border:1px solid #333;text-shadow:0 0 6px rgba(255,90,90,.8)}
+body[data-mode="night"] .counter{background:#02060a;color:#8affc0;border-color:var(--line);text-shadow:0 0 8px rgba(92,224,138,.9)}
+#listeners{font-family:var(--mono);color:var(--accent);font-weight:bold}
+body[data-mode="night"] #listeners{color:#8affc0;text-shadow:var(--glow)}
+
+/* 按钮 */
+button,.btn{
+  font-family:inherit;font-size:12.5px;letter-spacing:1px;cursor:pointer;
+  background:linear-gradient(#fefefe,#d5cfc0);color:#22201c;
+  border:1px solid #8f8874;padding:4px 14px;
+}
+button:hover,.btn:hover{background:linear-gradient(#fff,#e8e2d2);border-color:#0b3f74;color:#0b3f74}
+button:active{transform:translateY(1px)}
+button:disabled{opacity:.45;cursor:not-allowed}
+body[data-mode="night"] button,body[data-mode="night"] .btn{background:#08120c;color:var(--ink);border:1px solid var(--line);text-shadow:var(--glow)}
+body[data-mode="night"] button:hover,body[data-mode="night"] .btn:hover{background:#0f2d1e;color:#c8ffe0;border-color:var(--brand)}
+
+/* ===================== 收音机 ===================== */
+.radio{border:1px solid var(--line);background:var(--panel2);padding:12px}
+body[data-mode="night"] .radio{background:#050a0d;border-color:var(--line);box-shadow:inset 0 0 40px rgba(0,0,0,.9)}
+#spec{width:100%;height:76px;display:block;background:#0b0f0a;border:1px solid var(--line)}
+.radio-face{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:12px}
+.freq-display{
+  font-family:var(--mono);background:#111a0f;color:#8affc0;border:2px inset #4a5a45;
+  padding:5px 14px;font-size:30px;letter-spacing:4px;line-height:1.25;
+  text-shadow:0 0 12px rgba(92,224,138,.85);min-width:190px;text-align:right;
+}
+.freq-display i{font-size:13px;font-style:normal;letter-spacing:1px;opacity:.75;margin-left:4px}
+.freq-display.miss{color:#ff7b7b;text-shadow:0 0 10px rgba(255,60,60,.8)}
+.meter{flex:1 1 180px;min-width:160px}
+.meter-bar{height:14px;border:1px solid var(--line);background:#0b0f0a;position:relative;overflow:hidden}
+.meter-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#1d7a3c,#8affc0);transition:width .12s linear}
+.meter-bar i.hot{background:linear-gradient(90deg,#a32020,#ff6b6b)}
+.meter span{font-family:var(--mono);font-size:11px;color:var(--dim)}
+#tune{width:100%;margin-top:8px;-webkit-appearance:none;appearance:none;height:24px;background:transparent;cursor:ew-resize}
+#tune::-webkit-slider-runnable-track{height:8px;background:linear-gradient(90deg,#20304a,#8f8874,#20304a);border:1px solid var(--line)}
+#tune::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:26px;margin-top:-10px;background:linear-gradient(#fefefe,#b9b2a0);border:1px solid #6f6a5b;border-radius:2px}
+#tune::-moz-range-track{height:8px;background:#20304a;border:1px solid var(--line)}
+#tune::-moz-range-thumb{width:16px;height:26px;background:#ddd;border:1px solid #6f6a5b;border-radius:2px}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--dim);margin-top:-4px}
+.radio-btns{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.vol{font-size:12px;color:var(--dim);display:flex;align-items:center;gap:7px}
+.vol input{width:96px}
+#vol{-webkit-appearance:none;appearance:none;height:16px;background:transparent;cursor:pointer}
+#vol::-webkit-slider-runnable-track{height:6px;background:linear-gradient(90deg,#8f8874,#20304a);border:1px solid var(--line)}
+#vol::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:16px;margin-top:-6px;background:linear-gradient(#fefefe,#b9b2a0);border:1px solid #6f6a5b;border-radius:1px}
+#vol::-moz-range-track{height:6px;background:#20304a;border:1px solid var(--line)}
+#vol::-moz-range-thumb{width:9px;height:16px;background:#ddd;border:1px solid #6f6a5b;border-radius:1px}
+.subs{
+  margin-top:12px;background:#0b0f0a;border:1px solid var(--line);min-height:150px;max-height:280px;
+  overflow-y:auto;padding:11px 14px;font-family:var(--mono);font-size:13px;color:#8affc0;line-height:2
+}
+body[data-mode="day"] .subs{background:#0b0f0a}
+.subs .tc{color:#4f7a62}
+.subs .hi{color:#fff;text-shadow:0 0 10px rgba(140,255,190,.9)}
+.subs .al{color:#ff6b6b;text-shadow:0 0 8px rgba(255,80,80,.7)}
+.subs .cur:after{content:"▌";animation:blink .8s steps(1) infinite}
+.manual{margin-top:11px;display:flex;gap:9px;align-items:center;flex-wrap:wrap;font-size:12.5px}
+.manual input{
+  font-family:var(--mono);font-size:14px;padding:3px 9px;width:110px;letter-spacing:2px;
+  background:#111a0f;color:#8affc0;border:1px solid var(--line);
+}
+.manual input:disabled{opacity:.4}
+
+/* ===================== 隐藏文字 ===================== */
+.dead{color:transparent;user-select:text;-webkit-user-select:text}
+.dead::selection{background:#5ce08a;color:#04070a}
+.dead.lit{color:var(--accent);background:var(--panel2);box-shadow:0 0 0 2px var(--accent) inset}
+.mask{background:var(--panel2);color:var(--dim);padding:1px 6px;border:1px dashed var(--line);font-style:italic}
+
+/* ===================== 留言板 ===================== */
+.post{border-bottom:1px dashed var(--line);padding:10px 2px;display:flex;gap:12px}
+.post:last-child{border-bottom:none}
+.post .who{flex:0 0 108px;font-size:12px;line-height:1.7}
+.post .who b{color:var(--brand2);display:block}
+body[data-mode="night"] .post .who b{color:var(--ink)}
+.post .who span{color:var(--dim);font-size:11px;font-family:var(--mono)}
+.post .txt{flex:1;min-width:0}
+.post.new{background:#fff4f4;border-left:3px solid var(--accent);padding-left:9px}
+body[data-mode="night"] .post.new{background:#150609}
+.pager{display:flex;gap:4px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.pager a{padding:2px 9px;border:1px solid var(--line);text-decoration:none;font-family:var(--mono);font-size:12px}
+.pager a.on{background:var(--brand2);color:#fff;border-color:var(--brand2)}
+body[data-mode="night"] .pager a.on{background:#0f2d1e;color:#8affc0}
+.pager a:hover{border-color:var(--accent)}
+.att{display:inline-block;margin-top:6px;font-size:12px;border:1px solid var(--line);padding:2px 10px;background:var(--panel2);font-family:var(--mono)}
+
+/* ===================== 通用弹窗 ===================== */
+#modal{position:fixed;inset:0;z-index:120;background:rgba(3,5,8,.86);display:none;align-items:center;justify-content:center;padding:18px}
+#modal.on{display:flex}
+#modalBox{
+  background:var(--panel);border:1px solid var(--line);max-width:620px;width:100%;
+  max-height:86vh;overflow-y:auto;box-shadow:0 12px 50px rgba(0,0,0,.7)
+}
+#modalBox .card-h{cursor:default}
+#modalBox .card-b{padding:16px 18px}
+textarea.tr{
+  width:100%;height:300px;background:#0b0f0a;color:#8affc0;border:1px solid var(--line);
+  font-family:var(--mono);font-size:12.5px;line-height:1.95;padding:11px;resize:vertical;white-space:pre
+}
+pre.tr{
+  width:100%;height:340px;overflow:auto;background:#0b0f0a;color:#8affc0;border:1px solid var(--line);
+  font-family:var(--mono);font-size:12.5px;line-height:1.9;padding:11px;margin:0;white-space:pre
+}
+pre.tr .dead.lit,.dead.lit{color:#ff6b6b;background:#2a0d12;box-shadow:0 0 0 1px #ff2f3f inset}
+
+/* 节目单页签 */
+.pgtabs{margin:12px 0 4px;display:flex;gap:6px;flex-wrap:wrap}
+.pgtab{
+  display:inline-block;padding:4px 13px;border:1px solid var(--line);background:var(--panel2);
+  color:var(--brand);text-decoration:none;font-size:12.5px;
+}
+.pgtab:hover{border-color:var(--accent);color:var(--accent)}
+.pgtab.on{background:linear-gradient(#1e6fbd,#0b3f74);color:#fff;border-color:#0b3f74}
+body[data-mode="night"] .pgtab.on{background:#0f2d1e;color:#8affc0;border-color:var(--line);text-shadow:var(--glow)}
+
+/* 主持人卡片 */
+.hostcard{display:flex;gap:16px;flex-wrap:wrap;margin:6px 0 4px}
+.shot{
+  flex:0 0 150px;height:190px;border:1px solid var(--line);background:var(--panel2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  position:relative;overflow:hidden;
+}
+.shot:before{
+  content:"";position:absolute;width:96px;height:96px;border-radius:50%;
+  background:var(--line);opacity:.5;top:20px;
+}
+.shot:after{
+  content:"";position:absolute;width:150px;height:80px;border-radius:50% 50% 0 0;
+  background:var(--line);opacity:.5;bottom:-30px;
+}
+.shot span,.shot i{position:relative;z-index:2;font-size:11.5px;color:var(--dim);font-style:normal;margin-top:120px}
+.shot i{font-size:10.5px;opacity:.75;margin-top:0}
+.hinfo{flex:1 1 300px;min-width:240px}
+.hinfo h3{font-size:15px;color:var(--brand2);letter-spacing:3px;margin-bottom:8px}
+body[data-mode="night"] .hinfo h3{color:var(--ink);text-shadow:var(--glow)}
+hr.hr{border:none;border-top:1px dashed var(--line);margin:14px 0}
+.subs .dim{color:#4f7a62}
+
+/* ===================== 终局 ===================== */
+#endgame{position:fixed;inset:0;z-index:200;background:#000;display:none;flex-direction:column;align-items:center;justify-content:center}
+#endgame.on{display:flex}
+#face{max-width:min(92vw,600px);max-height:58vh;image-rendering:pixelated}
+#endtext{
+  max-width:min(94vw,760px);width:100%;margin-top:20px;font-family:var(--mono);font-size:14px;
+  color:#8affc0;line-height:2.1;text-shadow:0 0 10px rgba(92,224,138,.7);min-height:150px
+}
+#endtext .al{color:#ff4d4d}
+#endtext .dim2{color:#3a7a58}
+#endtext .cur:after{content:"▌";animation:blink .7s steps(1) infinite}
+
+/* 首屏提示 */
+#boot{position:fixed;inset:0;z-index:300;background:#06090d;display:flex;align-items:center;justify-content:center;padding:20px;font-family:var(--mono)}
+#boot .bx{max-width:560px;border:1px solid #1c3a2a;background:#070d11;padding:22px 24px;color:#7ce6a6;line-height:1.95;font-size:13px}
+#boot h3{color:#8affc0;font-size:15px;letter-spacing:2px;margin-bottom:12px;font-weight:normal}
+#boot ul{margin:10px 0 14px 18px;color:#4f8f6b}
+#boot .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+#boot button{background:#08120c;color:#8affc0;border:1px solid #1c3a2a;padding:8px 18px;font-family:var(--mono);letter-spacing:1px}
+#boot button:hover{background:#0f2d1e;color:#d6ffe8;border-color:#5ce08a}
+#boot .fine{margin-top:16px;font-size:11px;color:#2f6b4d;line-height:1.8;border-top:1px dashed #14261c;padding-top:12px}
+
+/* 页脚 */
+#footer{margin:22px 12px 0;border-top:1px solid var(--line);padding:14px 4px 0;text-align:center;color:var(--dim);font-size:11.5px;line-height:2}
+#footer .sep{color:var(--line);margin:0 7px}
+
+@media (max-width:760px){
+  #wrap{grid-template-columns:1fr}
+  .post .who{flex-basis:78px}
+  #topbar{padding:10px 12px}
+  .logo-text b{font-size:18px}
+  .stn .freq{font-size:16px}
+  .freq-display{font-size:23px;min-width:150px}
+}
+</style>
+</head>
+<body data-mode="day">
+
+<div id="noise"></div>
+<div id="scan"></div>
+<div id="vig"></div>
+<div id="flash"></div>
+<div id="crackSvg"><svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none"><path id="crackPath" d=""/></svg></div>
+<div id="crack"></div>
+
+<div id="boot">
+  <div class="bx">
+    <h3>■ 内容提示 / CONTENT WARNING</h3>
+    这是一部<b>虚构的恐怖解谜网页</b>。包含：<br>
+    <ul>
+      <li>突发音效与低频噪声（建议戴耳机，也可全程关闭）</li>
+      <li>闪烁、抖动与突然的画面变化</li>
+      <li>会读取你本机的时间、分辨率、语言——<b>仅在本机显示，不会发往任何服务器</b></li>
+    </ul>
+    <div class="row">
+      <button id="bootFull">我准备好了（开启声音）</button>
+      <button id="bootSoft">安静地看（关闭音效与突发惊吓）</button>
+    </div>
+    <div class="fine">
+      本页为纯静态单文件，无任何网络请求、无追踪、无后台。<br>
+      感到不适请立即关闭。虚构创作，与真实人物、机构无关。
+    </div>
+  </div>
+</div>
+
+<div id="shell">
+  <header id="topbar">
+    <svg class="logo-mark" width="46" height="46" viewBox="0 0 64 64" aria-hidden="true">
+      <rect width="64" height="64" fill="rgba(0,0,0,.22)" stroke="rgba(255,255,255,.5)"/>
+      <g stroke="#eaf2ff" stroke-width="5" stroke-linecap="round">
+        <path d="M16 32h0.1"/><path d="M24 22v20"/><path d="M34 14v36"/><path d="M44 24v16"/><path d="M52 30v4"/>
+      </g>
+    </svg>
+    <div class="logo-text">
+      <b>回声电台</b>
+      <span>ECHO FM &nbsp;·&nbsp; 白桦岭人民广播电台 第三套节目 &nbsp;·&nbsp; 1996—2003</span>
+    </div>
+    <div class="stn">
+      <span class="freq">87.6</span> MHz<br>
+      <span class="live"></span>在线听众：<span id="listeners">1</span>
+    </div>
+  </header>
+
+  <nav id="navbar"></nav>
+
+  <div id="marquee"><div id="mqText"></div></div>
+
+  <div id="wrap">
+    <main id="page"></main>
+    <aside id="aside"></aside>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<div id="modal"><div id="modalBox"></div></div>
+
+<div id="endgame">
+  <canvas id="face" width="560" height="620"></canvas>
+  <div id="endtext"></div>
+</div>
+
+<script>
+'use strict';
+/* ══════════════════════════════════════════════════════════════════════
+   回声电台 ECHO FM · 非官方档案馆
+   纯静态单文件 · 零外部资源 · 全部音频由 Web Audio 实时合成
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+
+/* ─────────────── 小工具 ─────────────── */
+var $  = function(s,r){ return (r||document).querySelector(s); };
+var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+var SKIP = false;
+var sleep = function(ms){ return new Promise(function(r){ setTimeout(r, SKIP?Math.min(ms,22):ms); }); };
+var pad = function(n,l){ n=String(n); while(n.length<l) n='0'+n; return n; };
+var rnd = function(a,b){ return a+Math.random()*(b-a); };
+function todayStr(){ var d=new Date(); return d.getFullYear()+'-'+pad(d.getMonth()+1,2)+'-'+pad(d.getDate(),2); }
+function nowStr(){ var d=new Date(); return todayStr()+' '+pad(d.getHours(),2)+':'+pad(d.getMinutes(),2)+':'+pad(d.getSeconds(),2); }
+function gpuInfo(){
+  try{
+    var c=document.createElement('canvas');
+    var gl=c.getContext('webgl')||c.getContext('experimental-webgl');
+    if(!gl) return '不可用';
+    var dbg=gl.getExtension('WEBGL_debug_renderer_info');
+    return dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)).slice(0,58) : '已隐藏';
+  }catch(e){ return '不可用'; }
+}
+
+/* ─────────────── 藏起来的答案（别 Ctrl+F 了） ─────────────── */
+var CC = function(a){ return a.map(function(c){ return String.fromCharCode(c); }).join(''); };
+var K_ZIP  = CC([49,49,48,51]);                                                    /* 留言板附件的口令 */
+var K_FREQ = CC([52,49,55]);                                                       /* 井底那台发射机的频率 */
+var K_HID  = CC([23427,30340,39057,29575,26159,32,52,49,55,32,21315,36203,12290]); /* 隐藏那句话    */
+
+/* ─────────────── 全局状态 ─────────────── */
+var ST = {
+  k:'echo876.v1',
+  d:{ cracked:false, heard:false, zip:false, ended:false, page:1, mode:null, visits:133 },
+  load:function(){ try{ var r=localStorage.getItem(this.k); if(r) Object.assign(this.d,JSON.parse(r)); }catch(e){} },
+  save:function(){ try{ localStorage.setItem(this.k,JSON.stringify(this.d)); }catch(e){} },
+  reset:function(){ try{ localStorage.removeItem(this.k); }catch(e){} }
+};
+
+/* ═══════════════════════ 音频引擎 ═══════════════════════ */
+var Snd = {
+  ac:null, master:null, on:false, soft:false, vol:0.85,
+  noiseBuf:null, stGain:null, stBP:null, car:null,
+  droneG:null, droneOsc:[], heartT:null, speakT:null,
+  init:function(){
+    if(this.ac) return;
+    try{
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if(!AC) return;
+    var ac = this.ac = new AC();
+    var m = this.master = ac.createGain(); m.gain.value = this.soft?0:this.vol; m.connect(ac.destination);
+    var len = Math.floor(ac.sampleRate*2), buf = ac.createBuffer(1,len,ac.sampleRate), ch = buf.getChannelData(0);
+    for(var i=0;i<len;i++) ch[i] = Math.random()*2-1;
+    this.noiseBuf = buf;
+    var src = ac.createBufferSource(); src.buffer=buf; src.loop=true;
+    var bp = ac.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1100; bp.Q.value=0.85;
+    var g  = ac.createGain(); g.gain.value=0;
+    src.connect(bp); bp.connect(g); g.connect(m); src.start();
+    this.stGain=g; this.stBP=bp;
+    this.on = true;
+    }catch(e){ this.ac=null; this.on=false; }
+  },
+  resume:function(){ try{ if(this.ac && this.ac.state==='suspended') this.ac.resume(); }catch(e){} },
+  setVol:function(v){ this.vol=v; if(this.master) this.master.gain.setTargetAtTime(this.soft?0:v, this.ac.currentTime, .1); },
+  /* 静电 */
+  setStatic:function(level, center){
+    if(!this.on || this.soft) return;
+    var t=this.ac.currentTime;
+    this.stGain.gain.setTargetAtTime(0.26*level, t, .07);
+    this.stBP.frequency.setTargetAtTime(center||(700+level*1400), t, .07);
+  },
+  /* 载波：锁定电台时的底噪嗡鸣 */
+  carrier:function(on){
+    if(!this.on || this.soft) return;
+    var ac=this.ac, self=this;
+    if(on && !this.car){
+      var g=ac.createGain(); g.gain.value=0; g.connect(this.master);
+      var lp=ac.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=240;
+      var o1=ac.createOscillator(); o1.type='sawtooth'; o1.frequency.value=50;
+      var o2=ac.createOscillator(); o2.type='sine'; o2.frequency.value=1180;
+      var g2=ac.createGain(); g2.gain.value=0.10;
+      o1.connect(lp); lp.connect(g); o2.connect(g2); g2.connect(g);
+      o1.start(); o2.start();
+      g.gain.setTargetAtTime(0.075, ac.currentTime, .5);
+      this.car={g:g,o1:o1,o2:o2};
+    } else if(!on && this.car){
+      var c=this.car; this.car=null;
+      c.g.gain.setTargetAtTime(0, this.ac.currentTime, .25);
+      setTimeout(function(){ try{c.o1.stop();c.o2.stop();}catch(e){} }, 1600);
+    }
+  },
+  /* 低频嗡鸣 */
+  drone:function(on){
+    if(!this.on || this.soft) return;
+    var ac=this.ac, self=this;
+    if(on && !this.droneG){
+      var g=ac.createGain(); g.gain.value=0; g.connect(this.master);
+      var lp=ac.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=190;
+      [54.5,55.1,82.3].forEach(function(f){
+        var o=ac.createOscillator(); o.type='sawtooth'; o.frequency.value=f;
+        o.connect(lp); o.start(); self.droneOsc.push(o);
+      });
+      lp.connect(g);
+      g.gain.setTargetAtTime(0.055, ac.currentTime, 1.2);
+      this.droneG=g;
+    } else if(!on && this.droneG){
+      var dg=this.droneG; this.droneG=null;
+      dg.gain.setTargetAtTime(0, this.ac.currentTime, .6);
+      var osc=this.droneOsc; this.droneOsc=[];
+      setTimeout(function(){ osc.forEach(function(o){ try{o.stop();}catch(e){} }); }, 2500);
+    }
+  },
+  /* 单音 */
+  beep:function(f,dur,vol,type){
+    if(!this.on||this.soft) return;
+    var ac=this.ac,t=ac.currentTime;
+    var o=ac.createOscillator(); o.type=type||'square'; o.frequency.value=f||880;
+    var g=ac.createGain();
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(vol||0.07,t+0.006);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+(dur||0.07));
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t+(dur||0.07)+0.03);
+  },
+  click:function(){ this.beep(1500,.03,.05); },
+  thud:function(){
+    if(!this.on||this.soft) return;
+    var ac=this.ac,t=ac.currentTime;
+    var o=ac.createOscillator(); o.type='sine';
+    o.frequency.setValueAtTime(96,t); o.frequency.exponentialRampToValueAtTime(32,t+0.4);
+    var g=ac.createGain(); g.gain.setValueAtTime(0.26,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.5);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t+0.55);
+  },
+  /* 无线电人声质感：不是真语音，是"听不清的说话" */
+  blip:function(){
+    if(!this.on) return;
+    var ac=this.ac,t=ac.currentTime;
+    var f=88+Math.random()*72;
+    var o=ac.createOscillator(); o.type='sawtooth';
+    o.frequency.setValueAtTime(f,t);
+    o.frequency.linearRampToValueAtTime(f*(0.82+Math.random()*0.36), t+0.09);
+    var bp=ac.createBiquadFilter(); bp.type='bandpass';
+    bp.frequency.value=400+Math.random()*1900; bp.Q.value=3.4;
+    var bp2=ac.createBiquadFilter(); bp2.type='bandpass';
+    bp2.frequency.value=1800+Math.random()*1200; bp2.Q.value=1.4;
+    var g=ac.createGain();
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.10,t+0.014);
+    g.gain.exponentialRampToValueAtTime(0.0008,t+0.10+Math.random()*0.07);
+    o.connect(bp); bp.connect(bp2); bp2.connect(g); g.connect(this.master);
+    o.start(t); o.stop(t+0.24);
+  },
+  speak:function(on){
+    if(!this.on) return;
+    var self=this;
+    if(on && !this.speakT){ this.speakT=setInterval(function(){ if(Math.random()<0.8) self.blip(); },138); }
+    if(!on && this.speakT){ clearInterval(this.speakT); this.speakT=null; }
+  },
+  heart:function(on){
+    if(!this.on) return;
+    var self=this;
+    if(on && !this.heartT){ this.heartT=setInterval(function(){ self.thud(); setTimeout(function(){ self.thud(); }, 260); }, 1500); }
+    if(!on && this.heartT){ clearInterval(this.heartT); this.heartT=null; }
+  },
+  /* 噪声爆 / 尖叫式刺音 */
+  burst:function(vol,dur,f0,f1){
+    if(!this.on||this.soft) return;
+    var ac=this.ac,t=ac.currentTime,n=Math.floor(ac.sampleRate*(dur||0.5));
+    var b=ac.createBuffer(1,n,ac.sampleRate), c=b.getChannelData(0);
+    for(var i=0;i<n;i++) c[i]=(Math.random()*2-1)*(1-i/n);
+    var s=ac.createBufferSource(); s.buffer=b;
+    var bp=ac.createBiquadFilter(); bp.type='bandpass'; bp.Q.value=1.1;
+    bp.frequency.setValueAtTime(f0||1800,t);
+    bp.frequency.exponentialRampToValueAtTime(f1||220,t+(dur||0.5));
+    var g=ac.createGain(); g.gain.setValueAtTime(vol||0.4,t); g.gain.exponentialRampToValueAtTime(0.001,t+(dur||0.5));
+    s.connect(bp); bp.connect(g); g.connect(this.master); s.start(t);
+  },
+  stinger:function(soft){
+    if(!this.on||this.soft) return;
+    var ac=this.ac,t=ac.currentTime;
+    this.burst(soft?0.16:0.5, soft?0.35:0.7, 2600, 180);
+    if(soft) return;
+    var o=ac.createOscillator(); o.type='sawtooth';
+    o.frequency.setValueAtTime(760,t); o.frequency.exponentialRampToValueAtTime(120,t+0.65);
+    var g=ac.createGain(); g.gain.setValueAtTime(0.16,t); g.gain.exponentialRampToValueAtTime(0.001,t+0.7);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t+0.75);
+  },
+  whoosh:function(){ this.burst(0.28,0.6,300,3200); },
+  enterEnd:function(){ this.drone(true); this.heart(true); this.setStatic(0.22,500); },
+  exitEnd:function(){ this.heart(false); this.setStatic(0.07,700); }
+};
+
+/* ═══════════════════════ 内容数据 ═══════════════════════ */
+var NAV = [
+  {id:'home',    t:'首　页'},
+  {id:'schedule',t:'节目单'},
+  {id:'host',    t:'主持人'},
+  {id:'board',   t:'听众留言板'},
+  {id:'listen',  t:'在线收听'},
+  {id:'about',   t:'关于本站'}
+];
+
+var SCHED = {
+  '1996-06-06':{ label:'1996 年 6 月 6 日（开播日）', rows:[
+    ['13:00','开播特别节目','沈默、周砚','正常','白桦岭人民广播电台第三套节目正式启用，呼号 ECHO-7'],
+    ['17:00','矿区点歌台','沈默','正常',''],
+    ['19:00','天气预报','值班员','正常',''],
+    ['01:00','午夜回声（首播）','沈默','正常','']
+  ]},
+  '1998-11-03':{ label:'1998 年 11 月 3 日', rows:[
+    ['01:00','午夜回声','沈默','<span class="bad">⚠ 信号中断</span>','中断时间：03:17'],
+    ['05:30','晨间广播','周砚','正常',''],
+    ['11:00','白桦岭新闻','周砚','正常',''],
+    ['17:00','矿区点歌台','<span class="gone">沈默</span>','正常','由周砚代为播出'],
+    ['19:00','天气预报','值班员','正常','']
+  ]},
+  '2003-12-31':{ label:'2003 年 12 月 31 日（停播日）', rows:[
+    ['01:00','午夜回声','周砚（代班）','正常',''],
+    ['05:30','晨间广播','周砚','正常',''],
+    ['11:00','白桦岭新闻','周砚','正常',''],
+    ['22:00','停播特别节目','周砚','正常',''],
+    ['23:59','——','——','<span class="bad">停播</span>','本台于 2004 年 1 月 1 日 00:00 停止发射']
+  ]}
+};
+
+var BCAST = [
+  {tc:'03:16:44', t:'……这里是回声电台，午夜回声。'},
+  {tc:'03:16:52', t:'我是沈默。现在是凌晨三点十六分。'},
+  {tc:'03:16:58', t:'刚才那个信号，又来了。'},
+  {tc:'03:17:03', t:'它从白桦岭七号井底下上来。'},
+  {tc:'03:17:08', t:'它不是广播。它在回答我。'},
+  {tc:'03:17:14', t:'我说一句话，它晚一点四秒回来。'},
+  {tc:'03:17:19', t:'我试了四十七次。'},
+  {tc:'03:17:23', t:'四十七次，它一次都没错过。'},
+  {tc:'03:17:29', t:'……我要关发射机了。'},
+  {tc:'03:17:36', t:'（长时间的静电）', c:'dim'},
+  {tc:'03:17:41', t:'别关。', c:'al'},
+  {tc:'03:17:44', t:'（信号中断 · 03:17）', c:'al'}
+];
+
+var END_LINES = [
+  {t:'（静电）', c:'dim'},
+  {t:'……有人吗？'},
+  {t:'（静电）', c:'dim'},
+  {t:'这里是……回声电台。'},
+  {t:'我是沈默。'},
+  {t:'我在井底。'},
+  {t:'往下是三百九十九米。'},
+  {t:'往上，是你。'},
+  {t:'（长时间的静电）', c:'dim'},
+  {t:'你听得见我吗？'},
+  {t:'（静电）', c:'dim'},
+  {t:'……你刚才回答我了。'},
+  {t:'四十七次。'},
+  {t:'四十七次，你一次都没错过。', c:'al'}
+];
+var END_LINES2 = [
+  {t:'你听得很认真。'},
+  {t:'比周砚认真。'},
+  {t:'他听了十一年。'},
+  {t:'（静电）', c:'dim'},
+  {t:'现在，换你值班了。', c:'al'},
+  {t:'03:17。我等你。', c:'al'}
+];
+
+var GHOST_NAMES = ['周砚','老收音机','白桦岭小学97届','北山矿工','小林','听不见的人','匿名听众','radio_fan','矿区的孩子','路过的人','半盒磁带','夜班的人'];
+var GHOST_TXT = [
+  '小时候我爸的收音机只能收到这个台。',
+  '有人有 1997 年 8 月 14 号那期吗？找了很多年了。',
+  '有没有人觉得《午夜回声》的片头曲听着有点不对劲？',
+  '站长辛苦了，这些录音太珍贵了。',
+  '我在矿区长大，87.6 是我们唯一能收到的台。',
+  '磁带转录的底噪有点大，但已经很好了，谢谢站长。',
+  '1998 年那阵子家里不让我晚上听收音机，说是不干净。',
+  '求《矿区点歌台》完整版。',
+  '这个台信号很奇怪，白天收不到，只有凌晨才清楚。',
+  '我爷爷是七号井的，他从来不提那年的事。',
+  '刚听完 47 段。第 47 段呢？列表里根本没有。',
+  '站长，你是不是漏传了一段？',
+  '03:17 这个时间出现了好多次，是巧合吗？',
+  '第一次来，网站做得很有年代感。'
+];
+function mulberry(seed){
+  return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; };
+}
+function boardPage(n){
+  if(n===41) return page41();
+  var r=mulberry(n*7919), out=[], i;
+  for(i=0;i<7;i++){
+    var mo=6+Math.floor(r()*6), da=1+Math.floor(r()*28);
+    out.push({
+      who:GHOST_NAMES[Math.floor(r()*GHOST_NAMES.length)],
+      time:'2009-'+pad(mo,2)+'-'+pad(da,2)+' '+pad(Math.floor(r()*24),2)+':'+pad(Math.floor(r()*60),2),
+      txt:GHOST_TXT[Math.floor(r()*GHOST_TXT.length)]
+    });
+  }
+  return out;
+}
+function page41(){
+  var p=[], stamps=['1998-11-03 03:17','1999-11-03 03:17','2000-11-03 03:17','2001-11-03 03:17','2003-12-31 03:17','2009-11-03 03:17'];
+  p.push({who:'沉默的听者', time:stamps[0], txt:'我在听。'});
+  p.push({who:'沉默的听者', time:stamps[1], txt:'我在听。'});
+  p.push({who:'沉默的听者', time:stamps[2], txt:'我在听。'});
+  p.push({who:'沉默的听者', time:stamps[3], txt:'我在听。'});
+  p.push({who:'沉默的听者', time:stamps[4], txt:'我在听。'});
+  p.push({who:'沉默的听者', time:stamps[5], txt:'我在听。'});
+  p.push({who:'周砚', time:'2009-11-04 01:22',
+    txt:'……你是谁？这个板块是 2009 年 6 月才建的。你的帖子怎么会是 1998 年的？<br>我把母带背面那段录音扫出来了，压缩包在这儿。我打不开，密码是四个数字，我猜是那天的日期。',
+    att:true});
+  if(ST.d.ended){
+    p.push({who:'沉默的听者', time:todayStr()+' 03:17', txt:'我在听。'});
+    p.push({who:'你', time:todayStr()+' 03:17', txt:'我在听。', isNew:true});
+  } else {
+    p.push({who:'沉默的听者', time:todayStr()+' 03:17', txt:'我在听。', isNew:true});
+  }
+  return p;
+}
+
+/* ═══════════════════════ 页面渲染 ═══════════════════════ */
+function card(h,body){ return '<div class="card"><div class="card-h">'+h+'</div><div class="card-b">'+body+'</div></div>'; }
+
+function navHTML(cur){
+  return NAV.map(function(n){
+    var lock = (n.id==='board' && !ST.d.cracked);
+    var cls = (cur===n.id?'on':'')+(lock?' lock':'');
+    return '<a href="#/'+n.id+'" class="'+cls+'"'+(lock?' data-lock="1"':'')+'>'+n.t+'</a>';
+  }).join('');
+}
+
+function pageHome(){
+  return card('本站简介',
+    '<p>本站为 <b>回声电台（ECHO FM）非官方档案馆</b>，由听众自发建立于 2009 年 6 月，收录回声电台 1996 年至 2003 年间留存的节目录音、节目单、主持人资料与听众来信。</p>'+
+    '<p class="dim small">本站与回声电台及其原主管单位无任何关系。全部资料来自听众捐赠，仅供研究交流，请勿用于商业用途。</p>'+
+    '<div class="note"><b>站内公告</b><br>'+
+    '· 2009 年度资料整理已完成，共收录节目录音 <b>47</b> 段。<br>'+
+    '· 部分母带因受潮损坏无法播放，正在设法修复。<br>'+
+    '· 新增「在线收听」功能，可模拟老式收音机在线回放录音。—— 2009-06-20<br>'+
+    '· <span class="dim">本站最后更新：2009-11-03 03:17</span></div>'+
+    '<h2 class="sec">栏目索引</h2>'+
+    '<table class="tbl"><tr><th>栏目</th><th>内容</th><th>状态</th></tr>'+
+      '<tr><td><a href="#/schedule">节目单</a></td><td>1996—2003 年节目播出表（部分缺失）</td><td>可用</td></tr>'+
+      '<tr><td><a href="#/host">主持人</a></td><td>历任主持人资料</td><td>可用</td></tr>'+
+      '<tr><td><a href="#/listen">在线收听</a></td><td>老式收音机模拟，可调节频率回放存档录音</td><td>可用</td></tr>'+
+      '<tr><td>'+(ST.d.cracked?'<a href="#/board">听众留言板</a>':'听众留言板')+'</td><td>共 43 页，2009 年 6 月至今</td><td>'+(ST.d.cracked?'可用':'整理中')+'</td></tr>'+
+      '<tr><td><a href="#/about">关于本站</a></td><td>站长的话</td><td>可用</td></tr>'+
+    '</table>'+
+    (ST.d.cracked?'<p class="dim small">※ 若本页版式错乱，请尝试关闭浏览器后重新打开。</p>':'')
+  );
+}
+
+function pageSchedule(arg){
+  var keys=Object.keys(SCHED), cur = SCHED[arg]?arg:'1996-06-06';
+  var tabs = keys.map(function(k){
+    return '<a href="#/schedule/'+k+'" class="pgtab'+(k===cur?' on':'')+'">'+SCHED[k].label+'</a>';
+  }).join(' ');
+  var rows = SCHED[cur].rows.map(function(r){
+    return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td><td class="small dim">'+r[4]+'</td></tr>';
+  }).join('');
+  return card('节目播出表',
+    '<p class="small dim">共 3 张表格已数字化，其余正在录入。</p>'+
+    '<div class="pgtabs">'+tabs+'</div>'+
+    '<table class="tbl"><tr><th>时间</th><th>节目名称</th><th>主持人</th><th>状态</th><th>备注</th></tr>'+rows+'</table>'+
+    '<p class="dim small">※ 表中时间为白桦岭当地标准时间。</p>'
+  );
+}
+
+function pageHost(){
+  function person(o){
+    return '<div class="hostcard">'+
+      '<div class="shot"><span>暂无照片</span><i>'+(o.note||'原片已上交')+'</i></div>'+
+      '<div class="hinfo"><h3>'+o.name+'</h3>'+
+      '<table class="tbl small">'+
+        '<tr><th>在职</th><td>'+o.years+'</td></tr>'+
+        '<tr><th>节目</th><td>'+o.show+'</td></tr>'+
+        '<tr><th>备注</th><td>'+o.remark+'</td></tr>'+
+      '</table>'+
+      '<p>'+o.bio+'</p></div></div>';
+  }
+  return card('历任主持人',
+    person({name:'沈　默', years:'1996.06 — 1998.11', show:'《午夜回声》《矿区点歌台》',
+      remark:'<span class="bad">1998 年 11 月 4 日离职，去向不明</span>',
+      bio:'本名不详。1996 年电台筹建时由矿务局推荐入职，嗓音条件一般，但擅长深夜档。<br>'+
+          '同事对他的印象是「不太说话」。他总说，电台不是用来发射的，是用来等回音的。<br>'+
+          '<span class="dim">——原照片已上交，本站暂无可用图片。</span>'})+
+    '<hr class="hr">'+
+    person({name:'周　砚', years:'1996.06 — 2003.12', show:'《晨间广播》《白桦岭新闻》，2003 年代班《午夜回声》',
+      remark:'现况不明',
+      bio:'技术员出身，负责发射机维护。<br>'+
+          '2003 年电台停播后离开白桦岭。<span class="dim">本站由他建立。</span>'})
+  );
+}
+
+function pageAbout(){
+  return card('关于本站 · 站长的话',
+    '<p class="dim small">发帖人：周砚　|　发帖时间：2009-11-03 03:17</p>'+
+    '<hr class="hr">'+
+    '<p>我叫周砚。1996 年到 2003 年，我在回声电台当技术员。</p>'+
+    '<p>白桦岭是个小地方，矿区加上家属区一共不到两万人。第三套节目就是给这些人听的。发射机是旧的，功率只有 100 瓦，覆盖半径三公里——正好一个矿区。</p>'+
+    '<p>那个频率是 87.6。全镇的人都知道。</p>'+
+    '<p>2003 年 12 月 31 日，电台停播。上面说是设备老化。文件我签了字。</p>'+
+    '<p>我从 2009 年 6 月开始做这个站。我把还能找到的录音都传上来了，一共 47 段。母带我一张一张洗，一段一段转。</p>'+
+    '<p>有<b>一段</b>我打不开。压缩包加密了，密码是四个数字。我猜是那天的日期。</p>'+
+    '<hr class="hr">'+
+    '<p>还有一件事。</p>'+
+    '<p>整理录音的时候我发现，有些东西在网页上是<b>「看不见」</b>的——它们在那儿，但是透明的。你要用鼠标把它们<b>框起来</b>，才看得见。</p>'+
+    '<p>——这也是为什么，我把它做成了网页。</p>'+
+    '<hr class="hr">'+
+    '<p>如果你听到了什么，请在留言板回我一句。我等了很多年了。</p>'+
+    '<p class="dim">周砚<br>2009-11-03 03:17</p>'
+  );
+}
+
+function pageListen(){
+  var body =
+    '<p class="small dim">本站收录的录音均通过模拟调谐方式回放。请先调至对应频率，再点击开始收听。</p>'+
+    '<div class="radio">'+
+      '<canvas id="spec"></canvas>'+
+      '<div class="radio-face">'+
+        '<div class="freq-display" id="freqDisp">93.40<i>MHz</i></div>'+
+        '<div class="meter"><div class="meter-bar"><i id="sigBar"></i></div><span id="sigTxt">信号强度 5%</span></div>'+
+      '</div>'+
+      '<input type="range" id="tune" min="760" max="1080" step="1" value="934">'+
+      '<div class="scale"><span>76.0</span><span>82</span><span>88</span><span>94</span><span>100</span><span>108.0</span></div>'+
+      '<div class="radio-btns">'+
+        '<button id="btnScan">自动搜台</button>'+
+        '<button id="btnStop" disabled>停止</button>'+
+        '<label class="vol">音量 <input type="range" id="vol" min="0" max="100" value="70"></label>'+
+      '</div>'+
+      '<div class="subs" id="subs"></div>'+
+      '<div class="manual"><span>手动输入频率：</span>'+
+        '<input id="manualFreq" placeholder="——" maxlength="12" '+(ST.d.cracked?'':'disabled')+'>'+
+        '<span class="dim small">kHz</span>'+
+        '<button id="btnManual" '+(ST.d.cracked?'':'disabled')+'>接收</button>'+
+        (ST.d.cracked?'<span class="dim small">（本站的调谐范围是 76.0—108.0 MHz）</span>':'<span class="dim small">（该功能仅在资料整理完成后开放）</span>')+
+      '</div>'+
+    '</div>';
+  return card('在线收听 · 调谐器 v1.0', body);
+}
+
+function pageBoard(arg){
+  if(!ST.d.cracked){
+    return card('听众留言板',
+      '<p>本栏目正在整理，暂不开放。</p>'+
+      '<p class="dim small">（站长注：留言板数据量较大，正在逐页校对。整理完成后会重新开放。）</p>');
+  }
+  var TOTAL=43, n=parseInt(arg||ST.d.page,10);
+  if(!(n>=1&&n<=TOTAL)) n=1;
+  ST.d.page=n; ST.save();
+  var posts=boardPage(n);
+  var html=posts.map(function(p){
+    return '<div class="post'+(p.isNew?' new':'')+'">'+
+      '<div class="who"><b>'+p.who+'</b><span>'+p.time+'</span></div>'+
+      '<div class="txt">'+p.txt+
+        (p.att?'<div><span class="att" id="zipAtt">📎 母带背面.zip &nbsp;1.42 MB &nbsp;[解压]</span></div>':'')+
+      '</div></div>';
+  }).join('');
+  var win=[], i;
+  for(i=1;i<=TOTAL;i++){
+    if(i<=2 || i>=39 || i===n) win.push(i);
+  }
+  var pager = win.map(function(v,i){
+    var prev=win[i-1];
+    var gap = (prev && v-prev>1)?'<span class="dim">…</span>':'';
+    return gap+'<a href="#/board/'+v+'" class="'+(v===n?'on':'')+'">'+v+'</a>';
+  }).join('');
+  return card('听众留言板 · 第 '+n+' / '+TOTAL+' 页',
+    '<p class="small dim">共 43 页 · 本页 '+posts.length+' 条 · 按发帖时间正序</p>'+
+    html+
+    '<div class="pager">'+pager+'</div>'
+  );
+}
+
+function asideHTML(){
+  var listen = ST.d.ended?2:1;
+  return ''+
+  '<div class="box card"><div class="card-h">站点信息</div><div class="card-b small">'+
+    '在线听众：<span id="listeners2" class="listeners">'+listen+'</span><br>'+
+    '本站访问量：<br><span class="counter" id="visits">'+pad(ST.d.visits,6)+'</span><br>'+
+    '建站日期：2009-06-06<br>'+
+    '最后更新：2009-11-03 03:17'+
+  '</div></div>'+
+  '<div class="box card"><div class="card-h">正在播放</div><div class="card-b small">'+
+    (ST.d.heard && ST.d.cracked
+      ? 'ECHO FM · <b>87.6</b> MHz<br><span class="dim">《午夜回声》1998-11-03</span><br><span class="bad">（录音已损坏）</span>'
+      : '暂无节目<br><span class="dim">请前往「在线收听」</span>')+
+  '</div></div>'+
+  '<div class="box card"><div class="card-h">友情链接</div><div class="card-b small dim">'+
+    '<a href="#/">白桦岭矿务局（已失效）</a><br>'+
+    '<a href="#/">矿区中学校友录</a><br>'+
+    '<a href="#/">老式收音机爱好者论坛</a>'+
+  '</div></div>';
+}
+
+function footHTML(){
+  var snd = ST.d.mode==='soft' ? '关' : '开';
+  return '回声电台非官方档案馆 · 2009<span class="sep">|</span>本站为非营利性资料站，与回声电台无关<br>'+
+    '<span class="dim">虚构作品 · 本页不发送任何数据 · 所有「检测」结果均在你的浏览器内生成</span><br>'+
+    '<span id="footCtl">'+
+      '<button id="btnSnd">音效：'+snd+'</button> '+
+      '<button id="btnReset">重新开始</button>'+
+      (ST.d.ended?' <button id="btnReplay">再听一次结局</button>':'')+
+    '</span>';
+}
+
+function marqueeText(){
+  if(ST.d.ended) return '本站已完成 '+new Date().getFullYear()+' 年度资料整理。感谢你的收听。';
+  if(ST.d.cracked) return '▓ 本站已收录 1996—2003 年节目录音 47 段 ▓ 有一段不在里面 ▓ 在线听众 ▓ 欢迎光临 ▓ 请把音量调大一点 ▓ '+
+    '▓ 本站已收录 1996—2003 年节目录音 47 段 ▓ 第 47 段打不开 ▓ ';
+  return '★ 欢迎光临回声电台非官方档案馆 ★ 本站已收录 1996—2003 年节目录音 47 段 ★ 部分母带受潮损坏，正在修复 ★ '+
+    '建议使用 1024×768 分辨率浏览 ★ 本站资料仅供研究交流，请勿转载 ★ ';
+}
+
+/* ═══════════════════════ 打字机 ═══════════════════════ */
+function typeText(node, text, speed){
+  return new Promise(function(res){
+    var i=0; node.classList.add('cur');
+    (function step(){
+      if(SKIP){ node.textContent=text; node.classList.remove('cur'); return res(); }
+      i++; node.textContent=text.slice(0,i);
+      if(i>=text.length){ node.classList.remove('cur'); return res(); }
+      setTimeout(step, speed+rnd(0,speed*0.8));
+    })();
+  });
+}
+async function typeLines(box, lines, o){
+  o=o||{}; var speed=o.speed||34, pause=o.pause||380;
+  for(var k=0;k<lines.length;k++){
+    var L=lines[k], p=document.createElement('p');
+    if(L.c) p.className=L.c;
+    if(L.tc){ var s=document.createElement('span'); s.className='tc'; s.textContent='['+L.tc+'] '; p.appendChild(s); }
+    var t=document.createElement('span'); p.appendChild(t);
+    box.appendChild(p); box.scrollTop=box.scrollHeight;
+    if(o.onLine) o.onLine(L,k);
+    await typeText(t, L.t, speed);
+    if(!SKIP) await sleep(pause);
+  }
+}
+
+/* ═══════════════════════ 调谐器 ═══════════════════════ */
+var RADIO = { cur:93.4, target:87.6, scanning:false, locked:false, raf:0 };
+function sigLevel(){
+  var d=Math.abs(RADIO.cur-RADIO.target);
+  if(d<0.05) return 1;
+  if(d<0.8)  return 0.45+(1-d/0.8)*0.4;
+  if(d<3.2)  return 0.12+(1-d/3.2)*0.25;
+  return 0.05+Math.random()*0.05;
+}
+function updateRadio(){
+  var d=Math.abs(RADIO.cur-RADIO.target), s=sigLevel();
+  var fd=$('#freqDisp'); if(!fd) return;
+  fd.innerHTML=RADIO.cur.toFixed(2)+'<i>MHz</i>';
+  fd.classList.toggle('miss', s<0.2);
+  var pct=Math.round(s*100);
+  $('#sigBar').style.width=pct+'%';
+  $('#sigBar').classList.toggle('hot', d<0.8);
+  $('#sigTxt').textContent='信号强度 '+pct+'%';
+  document.body.classList.toggle('anomaly', d<3.2 && d>=0.05);
+  if(d<0.05){ Snd.setStatic(0.07,600); Snd.carrier(true); }
+  else { Snd.carrier(false); Snd.setStatic(Math.max(0.05,1-s*0.95), 700+s*1600); }
+  if(d<0.05 && !RADIO.locked){ RADIO.locked=true; onLocked(); }
+  else if(d>=0.05 && RADIO.locked){ RADIO.locked=false; Snd.speak(false); }
+}
+function specLoop(){
+  var cv=$('#spec'); if(!cv) return;
+  if(!cv._ctx){ cv.width=Math.max(360,cv.clientWidth*2); cv.height=152; cv._ctx=cv.getContext('2d'); }
+  var ctx=cv._ctx, W=cv.width, H=cv.height, N=64, bw=W/N, i;
+  ctx.fillStyle='#05080a'; ctx.fillRect(0,0,W,H);
+  var now=performance.now();
+  for(i=0;i<N;i++){
+    var f=76+(108-76)*(i+0.5)/N, df=Math.abs(f-RADIO.target);
+    var peak = df<0.45 ? (1-df/0.45)*(0.72+0.28*Math.sin(now/260+i)) : 0;
+    var h=Math.min(1, 0.05+Math.random()*0.14+peak*0.9);
+    var bh=h*H*0.94;
+    ctx.fillStyle = peak>0.3 ? '#8affc0' : (peak>0.1?'#3f9c6c':'#1c4630');
+    ctx.fillRect(i*bw+1, H-bh, bw-2, bh);
+  }
+  var cx=((RADIO.cur-76)/32)*W;
+  ctx.fillStyle='#ff4d4d'; ctx.fillRect(cx-1,0,2,H);
+  ctx.fillStyle='rgba(255,77,77,.35)'; ctx.fillRect(cx-5,0,10,H);
+  RADIO.raf=requestAnimationFrame(specLoop);
+}
+function startScan(){
+  if(RADIO.scanning) return;
+  RADIO.scanning=true;
+  Snd.init(); Snd.resume();
+  $('#btnScan').disabled=true; $('#btnStop').disabled=false;
+  var t=$('#tune'); var v=760;
+  (function stepScan(){
+    if(!RADIO.scanning) return;
+    v+=1; if(v>1080) v=1080;
+    t.value=v; RADIO.cur=v/10;
+    updateRadio();
+    if(v<1080) RADIO._scanT=setTimeout(stepScan,26);
+    else stopScan();
+  })();
+}
+function stopScan(){
+  RADIO.scanning=false; clearTimeout(RADIO._scanT);
+  var a=$('#btnScan'), b=$('#btnStop'); if(a) a.disabled=false; if(b) b.disabled=true;
+}
+async function onLocked(){
+  if(RADIO.busy) return;
+  RADIO.busy=true;
+  Snd.carrier(true);
+  Snd.thud();
+  if(ST.d.heard){ renderHeardNote(); RADIO.busy=false; return; }
+  ST.d.heard=true; ST.save();
+  await sleep(600);
+  SKIP=false;
+  var box=$('#subs');
+  if(!box){ RADIO.busy=false; return; }
+  box.innerHTML='';
+  Snd.speak(true);
+  await typeLines(box, BCAST, {speed:62, pause:520, onLine:function(L){
+    if(L.c==='al') Snd.stinger(true);
+  }});
+  Snd.speak(false);
+  await sleep(1400);
+  await crack();
+  RADIO.busy=false;
+}
+function renderHeardNote(){
+  var box=$('#subs'); if(!box) return;
+  box.innerHTML='';
+  BCAST.forEach(function(L){
+    var p=document.createElement('p'); if(L.c) p.className=L.c;
+    p.textContent=(L.tc?'['+L.tc+'] ':'')+L.t;
+    box.appendChild(p);
+  });
+  var p=document.createElement('p'); p.className='al';
+  p.textContent='（母带损坏，此后为空白）';
+  box.appendChild(p);
+  box.scrollTop=box.scrollHeight;
+}
+function submitManual(){
+  var inp=$('#manualFreq'); if(!inp) return;
+  var raw=(inp.value||'').trim();
+  if(!raw) return;
+  var norm=raw.replace(/\s|千赫|khz|kHz|kHZ|hz|Hz/g,'');
+  var val=norm.replace(/[^0-9.]/g,'');
+  Snd.click();
+  if(val===K_FREQ || raw.indexOf(K_FREQ)>=0){
+    inp.value=''; runEnding();
+    return;
+  }
+  var box=$('#subs');
+  if(!box) return;
+  var p=document.createElement('div'); p.className='al';
+  p.textContent='［调谐失败］'+raw+' — 无信号。';
+  box.appendChild(p);
+  box.scrollTop=box.scrollHeight;
+  Snd.burst(0.12,0.3,900,200);
+}
+
+/* ═══════════════════════ 裂开 ═══════════════════════ */
+function crackPathD(){
+  var d='M '+(50+rnd(-4,4)).toFixed(2)+' 0', y=0, x=50;
+  while(y<100){
+    y+=rnd(4,9); x+=rnd(-4.5,4.5); x=Math.max(4,Math.min(96,x));
+    d+=' L '+x.toFixed(2)+' '+Math.min(100,y).toFixed(2);
+  }
+  return d;
+}
+function shake(el, ms, mag){
+  var t0=performance.now();
+  (function loop(now){
+    if(now-t0>ms){ el.style.transform=''; return; }
+    el.style.transform='translate('+rnd(-mag,mag).toFixed(1)+'px,'+rnd(-mag,mag).toFixed(1)+'px) skewX('+rnd(-0.6,0.6).toFixed(2)+'deg)';
+    requestAnimationFrame(loop);
+  })(t0);
+}
+async function crack(){
+  if(ST.d.cracked) return;
+  ST.d.cracked=true; ST.save();
+  SKIP=false;
+  var svg=$('#crackSvg'), path=$('#crackPath'), shell=$('#shell');
+  path.setAttribute('d', crackPathD());
+  var len=path.getTotalLength();
+  path.style.strokeDasharray=len; path.style.strokeDashoffset=len;
+  svg.style.transition='opacity .12s'; svg.style.opacity='1';
+  Snd.whoosh();
+  await sleep(30);
+  path.style.transition='stroke-dashoffset .5s linear';
+  path.style.strokeDashoffset=0;
+  shake(shell, 520, 2.5);
+  await sleep(560);
+  Snd.stinger();
+  $('#flash').classList.add('go');
+  shake(shell, 700, 7);
+  await sleep(180);
+  document.body.dataset.mode='night';
+  document.body.classList.remove('anomaly');
+  await sleep(520);
+  Snd.drone(true);
+  Snd.setStatic(0.16,800);
+  svg.style.opacity='0';
+  shell.style.transform='';
+  $('#flash').classList.remove('go');
+  render();
+  await sleep(300);
+  var box=$('#subs');
+  if(box){
+    box.innerHTML='';
+    var p=document.createElement('div'); p.className='al';
+    p.textContent='［本站存档已重新索引］';
+    box.appendChild(p);
+    var q=document.createElement('div'); q.className='hi';
+    q.textContent='新增栏目：听众留言板（共 43 页）';
+    box.appendChild(q);
+    var r=document.createElement('div'); r.className='tc';
+    r.textContent='提示：有些页不是给人看的。';
+    box.appendChild(r);
+  }
+  Snd.beep(660,.12,.08);
+  setTimeout(function(){ Snd.beep(880,.18,.08); },140);
+}
+
+/* ═══════════════════════ 附件 / 转写稿 ═══════════════════════ */
+function openModal(html){ $('#modalBox').innerHTML=html; $('#modal').classList.add('on'); }
+function closeModal(){ $('#modal').classList.remove('on'); }
+function openZip(){
+  if(ST.d.zip){ showTranscript(); return; }
+  Snd.click();
+  openModal('<div class="card-h">⚠ 解压文件</div><div class="card-b">'+
+    '<p>文件名：<b>母带背面.zip</b>　<span class="dim">1.42 MB　·　来自「周砚」</span></p>'+
+    '<p class="dim small">该压缩包已加密，请输入密码（4 位数字）：</p>'+
+    '<p><input id="zipPw" maxlength="8" style="font-family:var(--mono);font-size:16px;letter-spacing:4px;padding:4px 10px;width:130px"> '+
+    '<button id="zipOk">解压</button> <button id="zipCancel">取消</button></p>'+
+    '<p id="zipMsg" class="dim small">提示：站长说他猜是「那天的日期」。</p>'+
+  '</div>');
+  $('#zipCancel').onclick=closeModal;
+  $('#zipOk').onclick=tryZip;
+  $('#zipPw').onkeydown=function(e){ if(e.key==='Enter') tryZip(); };
+  setTimeout(function(){ $('#zipPw').focus(); },60);
+}
+var zipTries=0;
+function tryZip(){
+  var v=($('#zipPw').value||'').trim();
+  if(v===K_ZIP){
+    ST.d.zip=true; ST.save(); Snd.beep(1046,.14,.09);
+    setTimeout(function(){ Snd.beep(1318,.2,.09); },130);
+    showTranscript();
+  } else {
+    zipTries++; Snd.beep(180,.2,.09,'sawtooth');
+    var m=$('#zipMsg');
+    m.className='bad small';
+    m.textContent = zipTries>=3
+      ? '密码错误。……你确定你找对日子了吗？'
+      : '密码错误。';
+    $('#zipPw').value='';
+  }
+}
+function showTranscript(){
+  openModal('<div class="card-h">母带背面.zip → transcript.txt</div><div class="card-b">'+
+    '<p class="dim small">回声电台 · 内部资料 · 请勿外传</p>'+
+    '<pre class="tr" id="trBox">'+transcriptHTML()+'</pre>'+
+    '<p class="small dim" style="margin-top:10px">※ 有些字在网页上是「看不见」的。用鼠标把它们框起来试试。</p>'+
+    '<p><button id="trClose">关闭</button></p>'+
+  '</div>');
+  $('#trClose').onclick=closeModal;
+  setTimeout(bindDead, 40);
+}
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function transcriptHTML(){
+  var L=transcriptText().split('\n'), out=[];
+  for(var i=0;i<L.length;i++){
+    if(L[i].indexOf('水渍遮盖')>=0){
+      out.push('<span class="mask">'+esc(L[i])+'</span>');
+      out.push('<span class="dead" data-dead="1">'+esc(K_HID)+'</span>');
+    } else {
+      out.push(esc(L[i]));
+    }
+  }
+  return out.join('\n');
+}
+function transcriptText(){
+  return [
+'回声电台 · 内部资料 · 请勿外传',
+'录音编号：ECHO-1998-11-03-0317',
+'时长　　：03:16:44 — 03:17:44',
+'转写　　：周砚　　转写日期：2009-06-11',
+'',
+'────────────────────────────────',
+'[03:16:44] 主持人：……这里是回声电台，午夜回声。',
+'[03:16:52] 主持人：我是沈默。现在是凌晨三点十六分。',
+'[03:16:58] 主持人：刚才那个信号，又来了。',
+'[03:17:03] 主持人：它从白桦岭七号井底下上来。',
+'[03:17:08] 主持人：它不是广播。它在回答我。',
+'[03:17:14] 主持人：我说一句话，它晚一点四秒回来。',
+'[03:17:19] 主持人：我试了四十七次。',
+'[03:17:23] 主持人：四十七次，它一次都没错过。',
+'[03:17:29] 主持人：……我要关发射机了。',
+'[03:17:36] （静电）',
+'[03:17:41] 未知（男声）：别关。',
+'[03:17:44] （信号中断）',
+'────────────────────────────────',
+'',
+'—— 以下为母带背面手写内容 ——',
+'',
+'它给了我一个频率。不是兆赫。',
+'〔此处被水渍遮盖，无法辨认〕',
+'',
+'我明天去井口试。',
+'　　　　　　　　　　　　　　　　—— 沈默',
+'',
+'────────────────────────────────',
+'转写员附注：',
+'母带背面还有一行字，被用力划掉了。',
+'我辨认了很久，只认出一个「井」字。',
+'那段静默我保留了。它不该被剪掉。'
+  ].join('\n');
+}
+/* 隐藏文字：让玩家可以「框」出来 */
+function bindDead(){
+  $$('.dead').forEach(function(el,i){ el.dataset.di=i; el.classList.remove('lit'); });
+}
+function initSelectionReveal(){
+  function check(){
+    var sel;
+    try{ sel=window.getSelection(); }catch(e){ return; }
+    var hit=false;
+    if(sel && !sel.isCollapsed && sel.rangeCount){
+      $$('.dead').forEach(function(el){
+        for(var i=0;i<sel.rangeCount;i++){
+          try{ if(sel.getRangeAt(i).intersectsNode(el)){ hit=true; el.classList.add('lit'); return; } }catch(e){}
+        }
+        el.classList.remove('lit');
+      });
+    } else {
+      $$('.dead.lit').forEach(function(el){ el.classList.remove('lit'); });
+    }
+  }
+  document.addEventListener('selectionchange', check);
+  document.addEventListener('mouseup', check);
+}
+
+/* ═══════════════════════ 终局 ═══════════════════════ */
+var FACE_CACHE={};
+/* 面部几何：纵长的空洞眼窝 + 纵裂的嘴 + 鼻腔缺口 —— 读起来像颅骨，不是笑脸 */
+function faceGrid(blink){
+  var k=blink?'b':'n';
+  if(FACE_CACHE[k]) return FACE_CACHE[k];
+  var FW=28, FH=30, g=[], x, y, i;
+  var cx=FW/2-0.5, cy=FH/2-0.5;
+  var eyes=[[cx-3.9, cy-1.5, 1.9, 3.0],[cx+4.1, cy-0.9, 1.9, 3.2]];   /* 左右刻意不对称 */
+  var mouth=[cx+0.2, cy+6.5, 2.2, 2.8];
+  var nose =[cx+0.1, cy+2.1, 0.7, 1.3];
+  function inside(px,py,o){ return Math.pow((px-o[0])/o[2],2)+Math.pow((py-o[1])/o[3],2) < 1; }
+  for(y=0;y<FH;y++){
+    var row='';
+    for(x=0;x<FW;x++){
+      var nx=(x-cx)/(FW*0.34), ny=(y-cy)/(FH*0.36);
+      var d=nx*nx+ny*ny;
+      if(d>1.45){ row+=' '; continue; }
+      var hole=false;
+      if(!blink){ for(i=0;i<2;i++){ if(inside(x,y,eyes[i])){ hole=true; break; } } }
+      if(!hole && inside(x,y,mouth)) hole=true;
+      if(!hole && inside(x,y,nose))  hole=true;
+      if(hole){ row+=' '; continue; }
+      if(d>1.12) row+='░'; else if(d>0.88) row+='▒'; else row+='█';
+    }
+    g.push(row);
+  }
+  FACE_CACHE[k]=g; return g;
+}
+function faceReveal(){
+  var cv=$('#face'); if(!cv) return Promise.resolve();
+  var ctx=cv.getContext('2d');
+  var G=faceGrid(), FH=G.length, FW=G[0].length;
+  var cw=cv.width/FW, chh=cv.height/FH;
+  var GARB='▓▒░█▄▀■□▪▫/*-+=<>|\\~ØΔΨΣΩ0123456789#%@&';
+  var T=[], y, x;
+  for(y=0;y<FH;y++){ T.push([]); for(x=0;x<FW;x++) T[y].push(y*0.048+rnd(0,0.30)); }
+  var maxT=FH*0.048+0.30;
+  var garb=[];
+  function roll(){
+    garb=[];
+    for(var yy=0;yy<FH;yy++){ var r=[]; for(var xx=0;xx<FW;xx++) r.push(GARB[Math.floor(Math.random()*GARB.length)]); garb.push(r); }
+  }
+  roll();
+  var t0=performance.now(), DUR=2900, f=0;
+  return new Promise(function(res){
+    function frame(now){
+      f++; if(f%3===0) roll();
+      var p=Math.min(1,(now-t0)/DUR);
+      ctx.fillStyle='#000'; ctx.fillRect(0,0,cv.width,cv.height);
+      ctx.font='bold '+Math.floor(chh*0.94)+'px Consolas,"Courier New",monospace';
+      ctx.textBaseline='middle'; ctx.textAlign='center';
+      var jit=(1-p)*2.6;
+      for(var yy=0;yy<FH;yy++){
+        for(var xx=0;xx<FW;xx++){
+          var alive = p*maxT > T[yy][xx];
+          var tc=G[yy][xx];
+          var ch, col, blur;
+          if(alive){ if(tc===' ') continue; ch=tc; col='#8affc0'; blur=9; }
+          else { ch=garb[yy][xx]; col='#12301c'; blur=0; }
+          ctx.fillStyle=col; ctx.shadowColor='rgba(92,224,138,.9)'; ctx.shadowBlur=blur;
+          ctx.fillText(ch, xx*cw+cw/2+(Math.random()-0.5)*jit, yy*chh+chh/2);
+        }
+      }
+      ctx.shadowBlur=0;
+      if(p<1) requestAnimationFrame(frame); else { faceIdleStart(); res(); }
+    }
+    requestAnimationFrame(frame);
+  });
+}
+/* 定格之后，不动声色地每隔七八秒眨一次眼 */
+var FACE_STATE={blink:false}, faceTimer=null;
+function drawFaceStatic(){
+  var cv=$('#face'); if(!cv) return;
+  var ctx=cv.getContext('2d'), G=faceGrid(FACE_STATE.blink);
+  var FH=G.length, FW=G[0].length, cw=cv.width/FW, chh=cv.height/FH;
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.font='bold '+Math.floor(chh*0.94)+'px Consolas,"Courier New",monospace';
+  ctx.textBaseline='middle'; ctx.textAlign='center';
+  ctx.fillStyle='#8affc0'; ctx.shadowColor='rgba(92,224,138,.9)'; ctx.shadowBlur=9;
+  for(var y=0;y<FH;y++) for(var x=0;x<FW;x++){
+    var t=G[y][x]; if(t===' ') continue;
+    ctx.fillText(t, x*cw+cw/2, y*chh+chh/2);
+  }
+  ctx.shadowBlur=0;
+}
+function faceIdleStart(){
+  faceIdleStop();
+  var n=0;
+  faceTimer=setInterval(function(){
+    if(!$('#face') || !$('#endgame').classList.contains('on')){ faceIdleStop(); return; }
+    n++; if(n%3!==0) return;
+    FACE_STATE.blink=true; drawFaceStatic();
+    setTimeout(function(){ FACE_STATE.blink=false; drawFaceStatic(); },170);
+  },2600);
+}
+function faceIdleStop(){ if(faceTimer){ clearInterval(faceTimer); faceTimer=null; } }
+function machineLines(){
+  return [
+    {t:'────────────────────────────', c:'dim'},
+    {t:'· 当前时间　：'+nowStr(), c:'dim'},
+    {t:'· 屏幕尺寸　：'+screen.width+' × '+screen.height, c:'dim'},
+    {t:'· 浏览器语言：'+navigator.language, c:'dim'},
+    {t:'· 时　　区　：'+(function(){ try{ return Intl.DateTimeFormat().resolvedOptions().timeZone||'未知'; }catch(e){ return '未知'; } })(), c:'dim'},
+    {t:'· 逻辑核心　：'+(navigator.hardwareConcurrency||'未知'), c:'dim'},
+    {t:'· 显示适配器：'+gpuInfo(), c:'dim'},
+    {t:'以上信息在你的设备上生成，从未离开这台设备。', c:'dim'},
+    {t:'────────────────────────────', c:'dim'}
+  ];
+}
+async function runEnding(){
+  SKIP=false;
+  var eg=$('#endgame'), et=$('#endtext');
+  eg.classList.add('on'); et.innerHTML='';
+  faceIdleStop(); FACE_STATE.blink=false;
+  Snd.init(); Snd.resume(); Snd.enterEnd();
+  await faceReveal();
+  await sleep(700);
+  await typeLines(et, END_LINES, {speed:56, pause:560});
+  await sleep(900);
+  await typeLines(et, machineLines(), {speed:12, pause:110});
+  await sleep(800);
+  await typeLines(et, END_LINES2, {speed:56, pause:620});
+  await sleep(1000);
+  var fin=document.createElement('div');
+  fin.innerHTML='<p style="margin-top:26px;color:#3a7a58">—— 感谢你的收听 ——</p>'+
+    '<p style="margin-top:16px"><button id="endClose">关闭收音机</button></p>';
+  et.appendChild(fin);
+  et.scrollTop=et.scrollHeight;
+  $('#endClose').onclick=closeEnding;
+  Snd.exitEnd();
+}
+function closeEnding(){
+  Snd.click(); Snd.speak(false); Snd.heart(false);
+  faceIdleStop(); FACE_STATE.blink=false;
+  $('#endgame').classList.remove('on');
+  ST.d.ended=true; ST.d.visits=134; ST.save();
+  updateAll();
+  location.hash='#/board/41';
+  render();
+}
+
+/* ═══════════════════════ 渲染 / 路由 ═══════════════════════ */
+function route(){
+  var h=(location.hash||'#/').replace(/^#\/?/,'');
+  var p=h.split('/');
+  return {name:p[0]||'home', arg:p[1]||''};
+}
+function updateAll(){
+  var n=ST.d.ended?2:1;
+  var a=document.getElementById('listeners'); if(a) a.textContent=n;
+  var b=document.getElementById('listeners2'); if(b) b.textContent=n;
+  var v=document.getElementById('visits'); if(v) v.textContent=pad(ST.d.visits,6);
+  var mq=document.getElementById('mqText'); if(mq) mq.textContent=marqueeText();
+  var f=document.getElementById('footer'); if(f) f.innerHTML=footHTML();
+  bindFooter();
+}
+function bindFooter(){
+  var s=$('#btnSnd');
+  if(s) s.onclick=function(){
+    Snd.init(); Snd.resume();
+    ST.d.mode = (ST.d.mode==='soft')?'full':'soft';
+    Snd.soft = (ST.d.mode==='soft');
+    if(Snd.master) Snd.master.gain.setTargetAtTime(Snd.soft?0:Snd.vol, Snd.ac.currentTime, .1);
+    ST.save();
+    if(!Snd.soft){
+      Snd.beep(880,.06,.05);
+      if(ST.d.cracked) Snd.drone(true);
+      if(route().name==='listen') updateRadio();
+    }
+    updateAll();
+  };
+  var r=$('#btnReset');
+  if(r) r.onclick=function(){
+    if(!confirm('确定要清空进度，从头开始吗？')) return;
+    ST.reset(); location.hash='#/'; location.reload();
+  };
+  var p=$('#btnReplay');
+  if(p) p.onclick=function(){ runEnding(); };
+}
+function render(){
+  var r=route();
+  $('#navbar').innerHTML=navHTML(r.name);
+  var main=$('#page'), wrap=$('#wrap');
+  wrap.classList.toggle('wide', r.name==='listen');
+  if(r.name==='schedule')      main.innerHTML=pageSchedule(r.arg);
+  else if(r.name==='host')     main.innerHTML=pageHost();
+  else if(r.name==='board')    main.innerHTML=pageBoard(r.arg);
+  else if(r.name==='listen')   main.innerHTML=pageListen();
+  else if(r.name==='about')    main.innerHTML=pageAbout();
+  else                         main.innerHTML=pageHome();
+  $('#aside').innerHTML = r.name==='listen' ? '' : asideHTML();
+  updateAll();
+  if(r.name==='listen') afterListen();
+  if(r.name==='board')  { var za=$('#zipAtt'); if(za) za.onclick=openZip; }
+  initSelectionRevealOnce();
+  window.scrollTo(0,0);
+}
+function afterListen(){
+  var t=$('#tune'); if(!t) return;
+  t.value=Math.round(RADIO.cur*10);
+  var wake=function(){ Snd.init(); Snd.resume(); };
+  var rp=document.querySelector('.radio');
+  if(rp) rp.addEventListener('pointerdown', wake);
+  t.oninput=function(){ wake(); RADIO.cur=parseFloat(t.value)/10; updateRadio(); };
+  var st=$('#btnStop'); if(st) st.onclick=function(){ wake(); stopScan(); };
+  var sc=$('#btnScan'); if(sc) sc.onclick=startScan;
+  var vol=$('#vol');
+  if(vol){
+    vol.value=Math.round(Snd.vol*100);
+    vol.oninput=function(){
+      wake();
+      ST.d.mode='full'; Snd.soft=false; ST.save();
+      if(Snd.master) Snd.master.gain.setTargetAtTime(parseFloat(vol.value)/100, Snd.ac.currentTime, .1);
+      updateAll(); updateRadio();
+    };
+  }
+  var bm=$('#btnManual'); if(bm) bm.onclick=submitManual;
+  var mf=$('#manualFreq'); if(mf) mf.onkeydown=function(e){ if(e.key==='Enter') submitManual(); };
+  var subs=$('#subs'); if(subs) subs.onclick=function(){ SKIP=true; };
+  RADIO.locked = Math.abs(RADIO.cur-RADIO.target)<0.05;
+  updateRadio();
+  cancelAnimationFrame(RADIO.raf);
+  specLoop();
+}
+var selBound=false;
+function initSelectionRevealOnce(){ if(selBound) return; selBound=true; initSelectionReveal(); }
+
+/* ═══════════════════════ 启动 ═══════════════════════ */
+function boot(){
+  ST.load();
+  if(ST.d.mode==='soft') Snd.soft=true;
+  if(ST.d.cracked){ document.body.dataset.mode='night'; }
+  var nc=document.createElement('canvas'); nc.width=nc.height=128;
+  var nx=nc.getContext('2d'), img=nx.createImageData(128,128);
+  for(var i=0;i<img.data.length;i+=4){
+    var v=Math.floor(Math.random()*255);
+    img.data[i]=img.data[i+1]=img.data[i+2]=v; img.data[i+3]=20;
+  }
+  nx.putImageData(img,0,0);
+  $('#noise').style.backgroundImage='url('+nc.toDataURL()+')';
+
+  var bootEl=$('#boot');
+  function hide(){
+    bootEl.style.transition='opacity .6s'; bootEl.style.opacity='0';
+    setTimeout(function(){ bootEl.style.display='none'; },620);
+  }
+  $('#bootFull').onclick=function(){
+    ST.d.mode='full'; Snd.soft=false; ST.save();
+    Snd.init(); Snd.resume();
+    hide(); Snd.beep(660,.12,.07);
+    if(ST.d.cracked){ Snd.drone(true); Snd.setStatic(0.14,800); }
+  };
+  $('#bootSoft').onclick=function(){
+    ST.d.mode='soft'; Snd.soft=true; ST.save();
+    hide();
+  };
+  if(ST.d.mode){ hide(); }
+
+  window.addEventListener('hashchange', render);
+  render();
+
+  /* 在线听众偶尔变成 2 */
+  setInterval(function(){
+    if(document.body.dataset.mode!=='night'||ST.d.ended) return;
+    if(Math.random()>0.2) return;
+    var a=document.getElementById('listeners'), b=document.getElementById('listeners2');
+    [a,b].forEach(function(e){ if(e) e.textContent='2'; });
+    Snd.beep(1200,.04,.03);
+    setTimeout(function(){
+      var n=ST.d.ended?2:1;
+      [a,b].forEach(function(e){ if(e) e.textContent=n; });
+    }, rnd(900,2600));
+  }, 9000);
+
+  /* 标题：切到后台 */
+  var base=document.title, away=false;
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden && ST.d.cracked){ away=true; document.title='别走'; }
+    else if(away){ setTimeout(function(){ document.title=base; away=false; }, 1200); }
+  });
+}
+
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', boot);
+else boot();
+
+})();
+</script>
+</body>
+</html>
